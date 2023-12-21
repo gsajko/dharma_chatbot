@@ -1,0 +1,275 @@
+{
+    "language": "English",
+    "filetype": "pdf",
+    "toc": [
+        [
+            1,
+            "Cover",
+            1
+        ],
+        [
+            1,
+            "Title",
+            2
+        ],
+        [
+            1,
+            "Copyright",
+            3
+        ],
+        [
+            1,
+            "Contents",
+            5
+        ],
+        [
+            1,
+            "Foreword",
+            8
+        ],
+        [
+            1,
+            "Abbreviations",
+            11
+        ],
+        [
+            1,
+            "Preface",
+            12
+        ],
+        [
+            1,
+            "Part One: Orientations",
+            18
+        ],
+        [
+            2,
+            "1 The Path of Emptiness is a Journey of Insight",
+            19
+        ],
+        [
+            2,
+            "2 Emptiness, Fabrication, and Dependent Arising",
+            31
+        ],
+        [
+            2,
+            "3 \u201cAll is Void!\u201d \u2013 Initial Reactions, and Responses",
+            39
+        ],
+        [
+            1,
+            "Part Two: Tools and Provisions",
+            47
+        ],
+        [
+            2,
+            "4 The Cultivation of Insight",
+            48
+        ],
+        [
+            2,
+            "5 Sam\u0101dhi and its Place in Insight Practice",
+            61
+        ],
+        [
+            1,
+            "Part Three: Setting Out",
+            90
+        ],
+        [
+            2,
+            "6 Emptiness that\u2019s Easy to See",
+            91
+        ],
+        [
+            2,
+            "7 An Understanding of Mindfulness",
+            108
+        ],
+        [
+            2,
+            "8 Eyes Wide Open: Seeing Causes and Conditions",
+            125
+        ],
+        [
+            2,
+            "9 Stories, Personalities, Liberations",
+            136
+        ],
+        [
+            2,
+            "10 Dependent Origination (1)",
+            149
+        ],
+        [
+            1,
+            "Part Four: On Deepening Roads",
+            165
+        ],
+        [
+            2,
+            "11 The Experience of Self Beyond Personality",
+            166
+        ],
+        [
+            2,
+            "12 Three More Liberating Ways of Looking: (1) \u2013 Anicca",
+            179
+        ],
+        [
+            2,
+            "13 Three More Liberating Ways of Looking: (2) \u2013 Dukkha",
+            196
+        ],
+        [
+            2,
+            "14 Three More Liberating Ways of Looking: (3) \u2013 Anatt\u0101",
+            212
+        ],
+        [
+            2,
+            "15 Emptiness and Awareness (1)",
+            232
+        ],
+        [
+            1,
+            "Part Five: Of Highways and Byways",
+            252
+        ],
+        [
+            2,
+            "16 The Relationship with Concepts in Meditation",
+            253
+        ],
+        [
+            2,
+            "17 The Impossible Self",
+            269
+        ],
+        [
+            2,
+            "18 The Dependent Arising of Dualities",
+            283
+        ],
+        [
+            1,
+            "Part Six: Radical Discoveries",
+            295
+        ],
+        [
+            2,
+            "19 The Fading of Perception",
+            296
+        ],
+        [
+            2,
+            "20 Love, Emptiness, and the Healing of the Heart",
+            316
+        ],
+        [
+            2,
+            "21 Buildings and their Building Blocks, Deconstructed",
+            330
+        ],
+        [
+            1,
+            "Part Seven: Further Adventures, Further Findings",
+            343
+        ],
+        [
+            2,
+            "22 No Thing",
+            344
+        ],
+        [
+            2,
+            "23 The Nature of Walking",
+            356
+        ],
+        [
+            2,
+            "24 Emptiness Views and the Sustenance of Love",
+            365
+        ],
+        [
+            1,
+            "Part Eight: No Traveller, No Journey \u2013 The Nature of Mind, and of Time",
+            384
+        ],
+        [
+            2,
+            "25 Emptiness and Awareness (2)",
+            385
+        ],
+        [
+            2,
+            "26 About Time",
+            401
+        ],
+        [
+            2,
+            "27 Dependent Origination (2)",
+            418
+        ],
+        [
+            2,
+            "28 Dependent Cessation \u2013 The Unfabricated, The Deathless",
+            438
+        ],
+        [
+            1,
+            "Part Nine: Like a Dream, Like a Magician\u2019s Illusion...",
+            456
+        ],
+        [
+            2,
+            "29 Beyond the Beyond\u2026",
+            457
+        ],
+        [
+            2,
+            "30 Notions of the Ultimate",
+            469
+        ],
+        [
+            2,
+            "31 An Empowerment of Views",
+            479
+        ],
+        [
+            1,
+            "A Word of Gratitude",
+            490
+        ],
+        [
+            1,
+            "Bibliography",
+            491
+        ],
+        [
+            1,
+            "About the Author",
+            496
+        ]
+    ],
+    "pages": 496,
+    "ocr_stats": {
+        "ocr_pages": 0,
+        "ocr_failed": 0,
+        "ocr_success": 0
+    },
+    "block_stats": {
+        "header_footer": 0,
+        "code": 0,
+        "table": 1,
+        "equations": {
+            "successful_ocr": 0,
+            "unsuccessful_ocr": 0,
+            "equations": 0
+        }
+    },
+    "postprocess_stats": {
+        "edit": {}
+    }
+}
