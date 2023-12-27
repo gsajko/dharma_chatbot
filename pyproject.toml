@@ -10,7 +10,10 @@ packages = [{include = "dharma_chatbot"}]
 python = "^3.10"
 pyvespa = "^0.39.0"
 langchain = "^0.0.352"
-
+sentence-transformers = "^2.2.2"
+torch="2.1.2" # for sentence-transformers
+# ^^ version fixed to prevent downloading other 
+chromadb = "0.4.21"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.12.0"
