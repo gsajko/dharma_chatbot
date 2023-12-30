@@ -1,76 +1,56 @@
 # %%
+import os
 
-# import os
-
-# from langchain.document_loaders import TextLoader
-from langchain.chains import LLMChain
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.llms import HuggingFaceHub
-from langchain.prompts import PromptTemplate
-
-# from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import Chroma
+import chromadb
+from IPython.display import Markdown, display
+from llama_index import ServiceContext, SimpleDirectoryReader, VectorStoreIndex
+from llama_index.embeddings import HuggingFaceEmbedding
+from llama_index.llms import HuggingFaceInferenceAPI
+from llama_index.vector_stores import ChromaVectorStore
 
 # %%
-# folder_path = "data/md_marker"
-# md_list = []
-# for file in os.listdir(folder_path):
-#     if file.endswith(".md"):
-#         md_list.append(file)
+folder_path = "data/md_marker"
+md_list = []
+for file in os.listdir(folder_path):
+    if file.endswith(".md"):
+        md_list.append(file)
 
-# text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
-# docs = []
-# for path in md_list:
-#     loader = TextLoader(f"{folder_path}/{path}")
-#     data = loader.load()
-#     print(f"Loaded {path}")
-#     splits = text_splitter.split_documents(data)
-#     print(f"there are {len(splits)} chunks in {path}")
-#     docs.extend(splits)
-# %%
-sentence_t_emb = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+
+documents = SimpleDirectoryReader(folder_path).load_data()
 
 # %%
-# vectorstore = Chroma.from_documents(
-#     documents=docs, embedding=sentence_t_emb, persist_directory="./chroma_db"
+#
+
+
+HF_TOKEN = os.environ["HUGGINGFACEHUB_API_TOKEN"]
+repo_id = "mistralai/Mixtral-8x7B-Instruct-v0.1"
+remote_llm = HuggingFaceInferenceAPI(model_name=repo_id, token=HF_TOKEN)
+embed_model = HuggingFaceEmbedding(model_name="sentence-transformers/all-MiniLM-L6-v2")
+# %%
+# Data Ingestion
+# set up ChromaVectorStore and load in data
+# vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
+# db = chromadb.PersistentClient(path="./chroma_db")
+# # chroma_collection = db.get_or_create_collection("quickstart")
+# vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
+# storage_context = StorageContext.from_defaults(vector_store=vector_store)
+# %%
+service_context = ServiceContext.from_defaults(embed_model=embed_model, llm=remote_llm)
+# %%
+# index = VectorStoreIndex.from_documents(
+#     documents, storage_context=storage_context, service_context=service_context
 # )
 # %%
-vectorstore = Chroma(persist_directory="./chroma_db", embedding_function=sentence_t_emb)
-# vectorstore.add_documents(documents=docs) # it took 15 minutes
-# %%
-# query it
-query = "What is attention?"
-retr_docs = vectorstore.similarity_search_with_score(query, k=10)
-# The returned distance score is cosine distance. Therefore, a lower score is better.
-# %%
-# print results
-for doc in range(5):
-    print(retr_docs[doc][0].page_content)
-    print(retr_docs[doc][1])
-
-
-# %%
-# llm + vectorstore
-
-
-# %%
-question = "What is attention?"
-
-template = """Question: {question}
-
-Answer: """
-
-prompt = PromptTemplate(template=template, input_variables=["question"])
-# %%
-repo_id = "mistralai/Mixtral-8x7B-Instruct-v0.1"
-# %%
-# htis access the model from huggingface api
-llm = HuggingFaceHub(
-    repo_id=repo_id, model_kwargs={"temperature": 0.5, "max_length": 64}
+# load from disk
+db2 = chromadb.PersistentClient(path="./chroma_db")
+chroma_collection = db2.get_or_create_collection("quickstart")
+vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
+index = VectorStoreIndex.from_vector_store(
+    vector_store,
+    service_context=service_context,
 )
-llm_chain = LLMChain(prompt=prompt, llm=llm)
 # %%
-print(llm_chain.run(question))
-# %%
-
+query_engine = index.as_query_engine()
+response = query_engine.query("What is attention?")
+display(Markdown(f"<b>{response}</b>"))
 # %%

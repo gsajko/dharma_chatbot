@@ -1,3 +1,4 @@
 *.Identifier
 
 /chroma_db
+.env
