@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content=" base-uri 'none' ; object-src 'none' ; default-src https: wss: ; script-src https: 'unsafe-inline' ; style-src https: 'unsafe-inline' ; form-action https: ; frame-src https: ; img-src https: data: ; block-all-mixed-content " http-equiv="Content-Security-Policy">
+<style type="text/css">
+    body,html {
+        width:100%;
+        height:100%;
+        margin:0;
+        padding:0;
+        overflow:hidden
+    }
+
+    .message-container {
+        padding: 5px;
+    }
+</style>
+</head>
+<body>
+    <div class="message-container">
+        <span>
+            The link you're trying to visit is not available. Please visit our <a href="https://support.airtable.com/docs/airtable-attachment-url-behavior">support center</a> for more information.
+        </span>
+    </div>
+</body>
+</html>
