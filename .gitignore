@@ -2,3 +2,6 @@
 
 /chroma_db
 .env
+
+/utils
+data/pdf_raws/
