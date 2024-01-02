@@ -56,9 +56,9 @@ def format_docs(docs):
     return "\n\n".join(doc.page_content for doc in docs)
 
 
-repo_id = "mistralai/Mixtral-8x7B-Instruct-v0.1"
+# repo_id = "mistralai/Mixtral-8x7B-Instruct-v0.1"
+repo_id = "SkunkworksAI/tinyfrank-1.4B"
 
-# htis access the model from huggingface api
 # HUGGINGFACEHUB_API_TOKEN = os.environ["HUGGINGFACEHUB_API_TOKEN"]
 llm = HuggingFaceHub(
     repo_id=repo_id, model_kwargs={"temperature": 0.2, "max_length": 256}
@@ -78,3 +78,4 @@ print(a)
 question = "What movies should I watch?"
 a = rag_chain.invoke(question)
 print(a)
+# %%

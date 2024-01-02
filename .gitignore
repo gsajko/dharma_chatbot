@@ -4,4 +4,5 @@
 .env
 
 /utils
-data/pdf_raws/
+data/pdf_raw/
+data/md_parts/
