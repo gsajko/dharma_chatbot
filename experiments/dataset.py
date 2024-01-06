@@ -1,7 +1,7 @@
 # %%
 
 import pandas as pd
-
+from langchain_community.document_loaders import UnstructuredMarkdownLoader
 # %%
 # read in csv file
 csv_file = "data/Rob_Burbea_Transcripts.2023-12-31.csv"
@@ -34,4 +34,29 @@ cols = [
 df[cols].head()
 # %%
 df.type_of_recording.unique()
+# %%
+docs = []
+total_rows = len(df[cols])
+for i, row in enumerate(df[cols].iterrows(), start=1):
+    metadata = dict(row[1])
+    markdown_path = f"data/md_parts/{metadata['name']}.md"
+    print(f"Processing {i}/{total_rows} rows")
+    try:
+        loader = UnstructuredMarkdownLoader(
+            markdown_path, mode="elements", metadata=metadata
+        )
+        data = loader.load()
+
+    except FileNotFoundError:
+        print(f"File {markdown_path} not found.")
+    data = loader.load()
+    docs.append(data)   
+
+
+# %%
+
+
+
+# %%
+# TODO split first line manually on "/\n" ?
 # %%
